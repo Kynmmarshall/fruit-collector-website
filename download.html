@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Fruit Collector - Retro Platformer Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #1a1a2e;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .download-header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+
+        .header-logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.8rem;
+            color: #4cc9f0;
+            text-shadow: 0 0 20px rgba(76, 201, 240, 0.7), 3px 3px 0 #f72585;
+            margin-bottom: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 1.3rem;
+            color: #b8c1ec;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Download Card */
+        .download-card {
+            background: linear-gradient(145deg, rgba(15, 52, 96, 0.8), rgba(26, 26, 46, 0.9));
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 0 auto;
+            max-width: 900px;
+            border: 3px solid #4cc9f0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+                        inset 0 0 30px rgba(76, 201, 240, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .download-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2rem;
+            color: #4cc9f0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .download-subtitle {
+            font-size: 1.2rem;
+            color: #b8c1ec;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Steps */
+        .download-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .step {
+            background: rgba(22, 33, 62, 0.7);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            border: 2px solid rgba(76, 201, 240, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            border-color: #4cc9f0;
+            box-shadow: 0 15px 30px rgba(76, 201, 240, 0.2);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #f72585;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .step-icon {
+            font-size: 3.5rem;
+            color: #4cc9f0;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: #b8c1ec;
+            line-height: 1.5;
+        }
+
+        /* Download Button */
+        .download-main-btn {
+            display: block;
+            background: linear-gradient(135deg, #f72585, #b5179e);
+            color: white;
+            padding: 25px 60px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 40px auto;
+            text-align: center;
+            max-width: 500px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 1px;
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-main-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .download-main-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-main-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(247, 37, 133, 0.4);
+            background: linear-gradient(135deg, #b5179e, #f72585);
+        }
+
+        .btn-icon {
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* File Info */
+        .file-info {
+            background: rgba(22, 33, 62, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: center;
+            border: 1px dashed #4cc9f0;
+        }
+
+        .file-info h4 {
+            color: #4cc9f0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .file-info p {
+            color: #b8c1ec;
+            font-size: 0.9rem;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            color: #4cc9f0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-top: 40px;
+            padding: 10px 25px;
+            border: 2px solid #4cc9f0;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .download-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b8c1ec;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-logo {
+                font-size: 2rem;
+            }
+            
+            .download-card {
+                padding: 30px 20px;
+            }
+            
+            .download-title {
+                font-size: 1.8rem;
+            }
+            
+            .download-main-btn {
+                padding: 20px 30px;
+                font-size: 1.3rem;
+            }
+            
+            .download-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="download-header">
+            <div class="header-logo">FRUIT COLLECTOR</div>
+            <p class="header-subtitle">Your retro gaming adventure awaits! Download now and start collecting fruits.</p>
+        </div>
+
+        <!-- Download Card -->
+        <div class="download-card">
+            <h2 class="download-title">DOWNLOAD & INSTALL</h2>
+            <p class="download-subtitle">Follow these simple steps to get started with your pixel adventure</p>
+
+            <!-- Steps -->
+            <div class="download-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Download APK</h3>
+                    <p>Get the game file directly to your Android device</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Enable Installation</h3>
+                    <p>Allow installation from unknown sources in Settings</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Install Game</h3>
+                    <p>Open the APK file and tap "Install"</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Start Playing</h3>
+                    <p>Launch the game and begin your adventure!</p>
+                </div>
+            </div>
+
+            <!-- Main Download Button -->
+            <a href="downloads/Fruit Collector.apk" class="download-main-btn" download="FruitCollector.apk">
+                <i class="fas fa-download btn-icon"></i>
+                DOWNLOAD NOW - 500 FCFA
+            </a>
+
+            <!-- File Info -->
+            <div class="file-info">
+                <h4><i class="fas fa-info-circle"></i> File Information</h4>
+                <p>• File: FruitCollector.apk • Size: ~50MB • Version: 1.0 • Android 8.0+</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #f72585;">
+                    <i class="fas fa-exclamation-triangle"></i> One-time payment • Lifetime access • No ads
+                </p>
+            </div>
+
+            <!-- Additional Info -->
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="color: #b8c1ec; margin-bottom: 15px;">
+                    <i class="fas fa-shield-alt" style="color: #4cc9f0;"></i>
+                    <strong>Safe & Secure:</strong> 100% virus-free • Verified installation
+                </p>
+                <p style="color: #b8c1ec;">
+                    <i class="fas fa-question-circle" style="color: #4cc9f0;"></i>
+                    Need help? Contact: <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQdzmRbHfCzrWcjQjNCqtKFjGzh?compose=CllgCJTNqGCwsNRGHQGHnLrHfrQZLJgzzFsTLQrjwngsPScfTDsGcDQVzxwBjtswtnvZgsMpKLq"><strong style="color: #f72585;">kynmmarshall@gmail.com</strong></a>
+                </p>
+            </div>
+
+            <!-- Back Button -->
+            <div style="text-align: center;">
+                <a href="home.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="download-footer">
+            <p>© 2025 Fruit Collector Game • Built with Flutter & Flame Engine</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #8a8fb5;">
+                By Kamdeu Yamdjeuson Neil Marshall
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        const steps = document.querySelectorAll('.step');
+        steps.forEach(step => {
+            step.addEventListener('mouseenter', () => {
+                const icon = step.querySelector('.step-icon i');
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            step.addEventListener('mouseleave', () => {
+                const icon = step.querySelector('.step-icon i');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+
+        // Download button click animation
+        const downloadBtn = document.querySelector('.download-main-btn');
+        downloadBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+            
+            // Show download started message
+            console.log('Download started...');
+        });
+
+        // Add floating animation to steps
+        steps.forEach((step, index) => {
+            step.style.animationDelay = `${index * 0.1}s`;
+            step.style.animation = `fadeInUp 0.5s ease-out forwards`;
+        });
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .step {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
