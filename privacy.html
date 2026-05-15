@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="318c73ae-ac6e-4a38-be15-4ef246be6f15"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fruit Collector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: #fff;
+            background-color: #1a1a2e;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .policy-shell {
+            background: linear-gradient(145deg, rgba(15, 52, 96, 0.86), rgba(26, 26, 46, 0.94));
+            border: 3px solid #4cc9f0;
+            border-radius: 24px;
+            padding: 44px 34px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(76, 201, 240, 0.08);
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto 0;
+        }
+
+        .policy-shell::before {
+            content: '';
+            position: absolute;
+            inset: -30%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.05) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .policy-shell > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(76, 201, 240, 0.12);
+            color: #b8c1ec;
+            border: 1px solid rgba(76, 201, 240, 0.25);
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2rem;
+            line-height: 1.4;
+            color: #4cc9f0;
+            text-shadow: 0 0 18px rgba(76, 201, 240, 0.45), 3px 3px 0 #f72585;
+            margin-bottom: 18px;
+        }
+
+        .page-intro {
+            max-width: 760px;
+            color: #d8def8;
+            font-size: 1.08rem;
+            margin-bottom: 30px;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 34px;
+        }
+
+        .info-card {
+            background: rgba(22, 33, 62, 0.72);
+            border: 1px solid rgba(76, 201, 240, 0.22);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .info-card h2,
+        .section h2 {
+            color: #4cc9f0;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .info-card p,
+        .section p,
+        .section li {
+            color: #e0e5fb;
+            font-size: 0.98rem;
+        }
+
+        .section {
+            background: rgba(22, 33, 62, 0.55);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 18px;
+            border-left: 4px solid #f72585;
+        }
+
+        .section ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .section li + li {
+            margin-top: 8px;
+        }
+
+        .contact-box {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+            padding: 20px;
+            border-radius: 14px;
+            background: rgba(76, 201, 240, 0.08);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+
+        .contact-box a {
+            color: #f72585;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .action-btn.primary {
+            background: #4cc9f0;
+            color: #0d1b2a;
+        }
+
+        .action-btn.secondary {
+            color: #4cc9f0;
+            border: 2px solid #4cc9f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 8px;
+            color: #b8c1ec;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .footer-links a {
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 14px;
+            }
+
+            .policy-shell {
+                padding: 28px 20px;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="policy-shell" aria-labelledby="privacy-title">
+            <div class="page-badge">
+                <i class="fas fa-shield-alt"></i>
+                Privacy Policy
+            </div>
+
+            <h1 id="privacy-title" class="page-title">Fruit Collector</h1>
+            <p class="page-intro">
+                This policy explains how the Fruit Collector website handles information when you visit the site,
+                open the download page, or contact us for support.
+            </p>
+
+            <div class="policy-grid">
+                <div class="info-card">
+                    <h2>What we collect</h2>
+                    <p>
+                        We do not ask you to create an account on this website. The site may collect basic usage data
+                        through analytics tools so we can understand page visits and improve the experience.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h2>How we use it</h2>
+                    <p>
+                        Any information gathered is used to keep the website working properly, measure traffic,
+                        and respond to support requests sent by email.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h2>Third-party services</h2>
+                    <p>
+                        This site uses an analytics service to view anonymous usage trends. If you contact us by email,
+                        your message will be handled through your mail provider.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Information collected automatically</h2>
+                <p>
+                    When you visit the website, standard browser and device information may be processed by our analytics
+                    provider, including page views, approximate location, browser type, device type, and referral data.
+                    We use this data in aggregate form and do not use it to identify you personally.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Information you choose to share</h2>
+                <p>
+                    If you contact us for support, you may share your name, email address, and any details included in
+                    your message. We use that information only to respond to your request and maintain support records.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Data retention</h2>
+                <p>
+                    We keep support messages only as long as needed to handle the request and maintain basic records.
+                    Analytics data is stored according to the retention settings of the service provider.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Your choices</h2>
+                <ul>
+                    <li>You can avoid analytics tracking by using browser settings, privacy tools, or tracker blocking extensions.</li>
+                    <li>You can contact us to ask about any information you previously shared by email.</li>
+                    <li>You can stop visiting the site at any time without creating an account or signing in.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Children's privacy</h2>
+                <p>
+                    Fruit Collector is a game website, but the site itself is not intended to collect personal information
+                    from children. If you believe a child has provided personal information to us, please contact us so we
+                    can review and remove it where appropriate.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Contact</h2>
+                <p>
+                    If you have questions about this policy, contact us using the address below.
+                </p>
+                <div class="contact-box">
+                    <div><strong>Email:</strong> <a href="mailto:kynmmarshall@gmail.com">kynmmarshall@gmail.com</a></div>
+                    <div><strong>Website:</strong> Fruit Collector</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a class="action-btn primary" href="home.html"><i class="fas fa-house"></i> Back to Home</a>
+                <a class="action-btn secondary" href="download.html"><i class="fas fa-download"></i> Go to Download</a>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2025 Fruit Collector Game. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="download.html">Download</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
